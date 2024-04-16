@@ -97,61 +97,62 @@ Punto de acceso 	No corresponde 	No corresponde 	No corresponde 	No corresponde
 Preguntas 
 Responde las siguientes preguntas relacionadas con los datos capturados: 
 1.	¿Se utilizaron diferentes tipos de cables / medios para conectar dispositivos? 
-Si, tenemos tres tipos, medio inalámbrico, cobre y fibra 
+Si, tenemos tres tipos: medio inalámbrico, cobre y fibra optica
 Escriba sus respuestas aquí. 
 2.	¿Los cables cambiaron el manejo de la PDU de alguna manera? 
-No, ya que los cables solo trabajan en capa 1
+No, los cables solo trabajan en capa 1
 Escriba sus respuestas aquí. 
 3.	¿El hub perdió parte de la información que recibió? 
 No
 Escriba sus respuestas aquí. 
 4.	¿Qué hace el hub con las direcciones MAC y las direcciones IP? 
-No hace nada, solo reenvía hacia todos sus puertos
+No hace nada, se reenvía hacia todos sus puertos.
 Escriba sus respuestas aquí. 
 5.	¿El punto de acceso inalámbrico hizo algo con la información que se le entregó? 
-Si, vuelve a empaquetar la trama para que viaje por ese medio 
+Si, vuelve a empaquetar la trama para que llegue a su destino por ese medio.
 Escriba sus respuestas aquí. 
 6.	¿Se perdió alguna dirección MAC o IP durante la transferencia inalámbrica? 
 No 
 Escriba sus respuestas aquí. 
 7.	¿Cuál fue la capa OSI más alta que utilizaron el hub y el punto de acceso? 
-Solamente trabaja en capa 1
+Trabaja en la capa 1
 Escriba sus respuestas aquí. 
 8.	¿El hub o el punto de acceso reprodujeron en algún momento una PDU rechazada con una “X” de color rojo? 
-Si, ya que al reenviar a todos los puertos solo es uno el destino y los demás los rechaza, esto ocurrió con el pc 172.56.31.4
+Si, porque al reenviar a todos los puertos  y solo es uno el destino y los demás es rechazado, ocurrió en el pc 172.56.31.4
 Escriba sus respuestas aquí. 
 9.	Al examinar la ficha PDU Details (Detalles de PDU), ¿qué dirección MAC aparecía primero, la de origen o la de destino? 
-La de destino
+Es la de destino
 Escriba sus respuestas aquí. 
 10.	¿Por qué las direcciones MAC aparecen en este orden? 
-Ya que, si se conoce la dirección, va a llevar el mensaje más rápido
+L as ordenes a parecen asi, ya que, se conociendo la dirección, va a llevar el mensaje más rápido
 Escriba sus respuestas aquí. 
 11.	¿Había un patrón para el direccionamiento MAC en la simulación? 
-no
+no hubo el patron
 Escriba sus respuestas aquí. 
 12.	¿Los switches reprodujeron en algún momento una PDU rechazada con una “X” de color rojo? 
-No, porque solo renvían la traba al destino requerido 
+No, solo renvían el mensaje al destino requerido.
 13.	Cada vez que se enviaba la PDU entre las redes 10 y 172, había un punto donde las direcciones MAC cambiaban repentinamente.  ¿Dónde ocurrió eso? 
-Si, ocurre en el router
+Si, ocurre en el router.
 
 14.	¿Qué dispositivo usa direcciones MAC que comienzan con 00D0: BA? 
-Es la del router
+El dispositivo es el router
 
 15.	¿A qué dispositivos pertenecían las otras direcciones MAC? 
-Pertenecían a direcciones emisores y receptores
+Pertenecían a las direcciones emisores y receptores
 Escriba sus respuestas aquí. 
 16.	¿Las direcciones IPv4 de envío y recepción cambiaron los campos en alguna de las PDU? 
-No
+No envio ni recepciono las direcciones
 
 17.	Cuando sigue la respuesta a un ping, a veces llamado pong, ¿ve el cambio de envío y recepción de direcciones IPv4? 
-Si
+Si se ve el cambio.
 
 18.	¿Cuál es el patrón para el direccionamiento IPv4 utilizado en esta simulación? 
-que cada dirección en el router no se pueda repetir en la misma dirección 
+El patron es que cada una de las direccines en el router no se pueda repetir en la misma dirección, tiene que ser diferente. 
 
 19.	¿Por qué es necesario asignar diferentes redes IP a los diferentes puertos de un router? 
-Para poder interconectar redes
+Para poder interconectar las redes
 
 20.	Si esta simulación se configura con IPv6 en lugar de IPv4, ¿cuál sería la diferencia? 
-Lo único que cambiaría sería el formato
+Lo que cambia sería el formato.
+
 
