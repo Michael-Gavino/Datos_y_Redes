@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Actividad 4: Configuración inicial de un Switch
 Para completar este laboratorio vamos utilizar Cisco Packet Tracer
 Objetivos
@@ -383,7 +382,7 @@ Examine el archivo de configuración de inicio.¿Qué comando muestra el conteni
 
 ¿Todos los cambios realizados están grabados en el archivo? Sí, se copio todo lo que está en la RAM a la NVRAM.
 
-5. Configura S2
+## 5. Configura S2
 
 Hemos completado la configuración en S1. Ahora configura el S2. Si no recuerda los comandos, consulte las partes 1 a 4 para obtener ayuda.
 
