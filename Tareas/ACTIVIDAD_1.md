@@ -1,6 +1,6 @@
 Departamento Académico de Ingeniería
 C8280 -Comunicación de Datos y Redes
-Actividad 4: Configuración inicial de un Switch
+## Actividad 4: Configuración inicial de un Switch
 Para completar este laboratorio vamos utilizar Cisco Packet Tracer
 Objetivos
 Parte 1: Verifica la configuración predeterminada del switch
@@ -79,9 +79,7 @@ S1>
 Proporciona un acceso seguro al modo privilegiado.
 Establece la contraseña de enable en jeka. Esta contraseña protege el acceso al modo privilegiado.
 S1> enable
-Comunicación de Datos y Redes
-Departamento Académico de Ingeniería
-C8280 -Comunicación de Datos y Redes
+
 S1# configure terminal
 S1(config)# enable password jeka
 S1(config)# exit
