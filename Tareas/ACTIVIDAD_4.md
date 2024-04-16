@@ -32,13 +32,15 @@ Switch> enable Switch#
 
 Observa que la solicitud cambió para reflejar el modo EXEC privilegiado.
 
-2 Examina la configuración actual del switch. Ingresa el comando show running-config.
+# 2 Examina la configuración actual del switch. Ingresa el comando show running-config.
 
 Switch# show running-config Responde las siguientes preguntas:
 
 ¿Cuántas interfaces Fast Ethernet tiene el switch? Tiene 24
 
+
 ¿Cuántas interfaces Gigabit Ethernet tiene el switch? Tiene 2
+
 
 ¿Cuál es el rango de valores que se muestra para las líneas vty? Se muestra de 0-4 y de 5-15
 
@@ -185,7 +187,7 @@ Examine el archivo de configuración de inicio.¿Qué comando muestra el conteni
 
 Hemos completado la configuración en S1. Ahora configura el S2. Si no recuerda los comandos, consulte las partes 1 a 4 para obtener ayuda.
 
-Configura el S2 con los siguientes parámetros:
+# Configura el S2 con los siguientes parámetros:
 
 Device name: S2
 Protege el acceso a la consola con la contraseña chalo.
