@@ -1,3 +1,23 @@
+## Actividad 4: Configuración inicial de un Switch
+Para completar este laboratorio vamos utilizar Cisco Packet Tracer
+Objetivos
+Parte 1: Verifica la configuración predeterminada del switch
+Parte 2: Establece una configuración básica del switch
+Parte 3: Configura un aviso de MOTD
+Parte 4: Guarda los archivos de configuración en la NVRAM
+Parte 5: Configura el S2
+Escenario
+En esta actividad, realizará tareas básicas de configuración del switch. Protegeremos el acceso a la
+interfaz de línea de comandos (CLI) y a los puertos de la consola mediante contraseñas cifradas y
+contraseñas de texto no cifrado. Configuraremos mensajes para los usuarios que inician sesión en el
+switch. Estos banners de mensajes también se utilizan para advertir a los usuarios no autorizados
+que el acceso está prohibido.
+*Nota:* En Packet Tracer, el switch Catalyst 2960 utiliza la versión 12.2 de IOS de forma
+predeterminada. Si es necesario, la versión IOS se puede actualizar desde un servidor de archivos
+en la topología Packet Tracer. El switch puede configurarse para arrancar a IOS versión 15.0, si esa
+versión es necesaria.
+
+# Instrucciones
 Verifica la configuración predeterminada del switch 1 Ingresa al modo EXEC privilegiado.
 
 Puedes acceder a todos los comandos del switch en el modo EXEC privilegiado. Sin embargo, debido a que muchos de los comandos privilegiados configuran parámetros operativos, el acceso privilegiado se debe proteger con una contraseña para evitar el uso no autorizado.
