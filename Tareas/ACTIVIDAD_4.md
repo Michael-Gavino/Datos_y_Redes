@@ -391,11 +391,15 @@ Hemos completado la configuración en S1. Ahora configura el S2. Si no recuerda 
 
 Device name: S2
 Protege el acceso a la consola con la contraseña chalo.
-Configura enable password como claudi y una contraseña enable secret como itsasecret.
-Configura un mensaje apropiado para aquellos que inician sesión en el switch.
-Encripta todas las contraseñas de texto no cifrado.
-Asegúrate de que la configuración sea correcta.
-Guarda el archivo de configuración para evitar perderlo si el switch se apaga.
-g. Cierra la ventana de configuración para S2
 
->>>>>>> 5723a95b5266a9e91e5b44a90444a11323aa8c01
+Configura enable password como claudi y una contraseña enable secret como itsasecret.
+
+Configura un mensaje apropiado para aquellos que inician sesión en el switch.
+
+Encripta todas las contraseñas de texto no cifrado.
+
+Asegúrate de que la configuración sea correcta.
+
+Guarda el archivo de configuración para evitar perderlo si el switch se apaga.
+
+g. Cierra la ventana de configuración para S2
