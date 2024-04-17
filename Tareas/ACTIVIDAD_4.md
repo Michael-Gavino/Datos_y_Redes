@@ -1,4 +1,5 @@
 ## Actividad 4: Configuración inicial de un Switch
+
 Para completar este laboratorio vamos utilizar Cisco Packet Tracer
 
 ## Objetivos
@@ -39,31 +40,31 @@ a -Haz clic en S1 y luego en la pestaña CLI. Presione Enter.
 
 b -Ingresa al modo EXEC privilegiado introduciendo el comando enable:
 
-Switch>**enable** 
-Switch#
+    Switch>enable
+    Switch#
 
 Observa que la solicitud cambió para reflejar el modo EXEC privilegiado.
 
 #  Examina la configuración actual del switch. Ingresa el comando show running-config.
 
-Switch# **show running-config** 
+    Switch# show running-config
 
-Responde las siguientes preguntas:
+# Responde las siguientes preguntas:
 
 ¿Cuántas interfaces Fast Ethernet tiene el switch?
-Tiene 24
+    Tiene 24
 
 ¿Cuántas interfaces Gigabit Ethernet tiene el switch? 
-Tiene 2
+    Tiene 2
 
 ¿Cuál es el rango de valores que se muestra para las líneas vty? 
-Se muestra de 0-4 y de 5-15
+    Se muestra de 0-4 y de 5-15
 
 ¿Qué comando muestra el contenido actual de la memoria de acceso aleatorio no volátil (NVRAM)? 
-show startup-config
+    show startup-config
 
 ¿Por qué el switch responde con "startup-config no está presente"? 
-Debido a que aun no se guarda nada en esa memoria.
+    Debido a que aun no se guarda nada en esa memoria.
 
 ## 2 Crea una configuración básica del switch 
 
@@ -71,35 +72,35 @@ Debido a que aun no se guarda nada en esa memoria.
 
 Para configurar los parámetros de un switch, quizá deba pasar por diversos modos de configuración. Observa cómo cambia la petición de entrada mientras navega por el switch.
 
-Switch# **configure terminal**
+    Switch# configure terminal
 
-Switch(config)# **hostname** S1
+    Switch(config)# hostname S1
 
-S1(config)# **exit**
+    S1(config)# exit
 
-S1#
+    S1#
 
 # Proporciona acceso seguro a la línea de consola.
 
 Para proporcionar un acceso seguro a la línea de la consola, acceda al modo config-line y establezca la contraseña de consola en **cesar**.
 
-S1# **configure terminal**
+    S1# configure terminal
 
-Enter configuration commands, one per line. End with CNTL/Z. 
+    Enter configuration commands, one per line. End with CNTL/Z. 
 
-S1(config)# **line console 0**
+    S1(config)# line console 0
 
-S1(config-line)# **password cesar**
+    S1(config-line)# password cesar
 
-S1(config-line)# **login**
+    S1(config-line)# login
 
-S1(config-line)# **exit**
+    S1(config-line)# exit
 
-S1(config)# **exit**
+    S1(config)# exit
 
-%SYS-5-CONFIG_I: Configured from console by console
+    %SYS-5-CONFIG_I: Configured from console by console
 
-S1#
+    S1#
 
 ¿Por qué se requiere el comando **login**?
 
@@ -109,27 +110,27 @@ Es importante porque sin ejecutar ese codigo, la contraseña recien creada no fu
 
 Salimos del modo privilegiado para verificar que la contraseña del puerto de consola esté vigente.
 
-S1# **exit**
+    S1# exit
 
-Switch con0 is now available
+    Switch con0 is now available
 
-Press RETURN to get started.
+    Press RETURN to get started.
 
-User Access Verification Password:
+    User Access Verification Password:
 
-S1>
+    S1>
 
 # Proporciona un acceso seguro al modo privilegiado.
 
 Establece la contraseña de **enable** en **jeka**. Esta contraseña protege el acceso al modo privilegiado. 
 
-S1> **enable**
+    S1> enable
 
-S1# **configure terminal**
+    S1# configure terminal
 
-S1(config)# **enable password jeka**
+    S1(config)# enable password jeka
 
-S1(config)# **exit**
+    S1(config)# exit
 
 %SYS-5-CONFIG_I: Configured from console by console S1#
 
@@ -151,7 +152,7 @@ e -Introduce la segunda contraseña que configuró para proteger el modo EXEC pr
 
 f -Verifica su configuración examinando el contenido del archivo de configuración en ejecución: 
 
-S1# **show running-config**
+    S1# show running-config
 
 Ten en cuenta que la consola y las contraseñas de activación están en texto plano. Esto podría suponer un riesgo para la seguridad si alguien está mirando por encima de su hombro u obtiene acceso a los archivos de configuración almacenados en una ubicación de copia de seguridad.
 
@@ -159,13 +160,13 @@ Ten en cuenta que la consola y las contraseñas de activación están en texto p
 
 La **contraseña de enable** se debe reemplazar por una nueva contraseña secreta encriptada mediante el comando **enable secret**. Configura la contraseña de enable secret como **itsasecret**.
 
-S1# **config t**
+    S1# config t
 
-S1(config)# **enable secret itsasecret** 
+    S1(config)# enable secret itsasecret
 
-S1(config)# **exit**
+    S1(config)# exit
 
-S1#
+    S1#
 
 **Nota:** La contraseña de **enable secret** sobrescribe la contraseña de **enable** password. Si ambos están configurados en el switch, debes ingresar la contraseña **enable secret** para ingresar al modo EXEC privilegiado.
 
