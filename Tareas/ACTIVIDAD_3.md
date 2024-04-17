@@ -1,22 +1,43 @@
-Actividad 3: Identificación de direcciones MAC y direcciones IP 
+## Actividad 3: Identificación de direcciones MAC y direcciones IP 
  
-Objetivos 
+# Objetivos 
+
 Parte 1: Recopilar información de PDU para la comunicación de red local 
+
 Parte 2: Recopilar información de PDU para la comunicación de red remota 
  
-Concepto importante 
+# Concepto importante 
 En el contexto de redes, PDU significa "Unidad de Datos del Protocolo" (Protocol Data Unit, por sus siglas en inglés). Es un término general que se refiere a la forma en que se encapsulan los datos en las diferentes capas del Modelo OSI (Open Systems Interconnection) o del Modelo TCP/IP para la transmisión a través de la red. Cada capa del modelo OSI utiliza una PDU específica para realizar su función: 
-•	Capa de Aplicación, Presentación y Sesión: Utilizan los datos de aplicación. 
-•	Capa de Transporte: Utiliza segmentos (en TCP) o datagramas (en UDP) como su PDU. 
-•	Capa de Red: Utiliza paquetes o datagramas como su PDU. 
-•	Capa de Enlace de Datos: Utiliza tramas como su PDU. 
-•	Capa Física: Utiliza bits como su PDU. 
-Aspectos básicos 
+
+•	Capa de Aplicación, Presentación y Sesión:
+
+
+Utilizan los datos de aplicación. 
+
+•	Capa de Transporte:
+
+Utiliza segmentos (en TCP) o datagramas (en UDP) como su PDU. 
+
+•	Capa de Red:
+
+Utiliza paquetes o datagramas como su PDU. 
+
+•	Capa de Enlace de Datos: 
+
+Utiliza tramas como su PDU. 
+
+•	Capa Física: 
+Utiliza bits como su PDU.
+
+# Aspectos básicos 
+
 Esta actividad está optimizada para la visualización de PDU . Los dispositivos ya están configurados. Reunirá información de PDU en el modo de simulación y responderá una serie de preguntas sobre los datos que obtenga. 
 Instrucciones Recopila información del PDU para la comunicación de red local 
  
-1.	Recopila información de la PDU a medida que un paquete viaja de 172.16.31.5 a 172.16.31.2. 
+## 1.	Recopila información de la PDU a medida que un paquete viaja de 172.16.31.5 a 172.16.31.2. 
+
 a.	Haz clic en 172.16.31.5 y abra el Command Prompt. 
+
 b.	Introduce el comando ping 172.16.31.2. 
  
 c.	Cambia al modo de simulación y repita el comando ping 172.16.31.2. Aparece una PDU junto a 172.16.31.5. 
@@ -25,30 +46,35 @@ d.	Haz clic en la PDU y observa la siguiente información de las pestañas Model
   
 o Source MAC Address: 00D0:D311:C788 o Source IP Address:172.16.31.5 o Destination IP Address: 172.16.31.2 o At Device: 172.16.31.5 
  
-e.	Haz clic en Capture / Forward (la flecha derecha seguida de una barra vertical) para mover la PDU al siguiente dispositivo. Reúna la misma información del paso 1d. Repite este proceso hasta que la PDU llegue al destino. Registra la información que reunió de la PDU en una hoja de cálculo con un formato como el de la tabla que se muestra a continuación: Formato de hoja de cálculo de ejemplo 
-En dispositivo 	MAC de destino 	MAC de origen 	IPv4 de origen 	IPv4 de destino 
-172.16.31.5 	000C:85CC:1DA7 	00D0:D311:C788 	172.16.31.5 	172.16.31.2 
-Switch1 	000C:85CC:1DA7 	00D0:D311:C788 	No corresponde 	No corresponde 
-Concentrador 	No corresponde 	No corresponde 	No corresponde 	No corresponde 
-172.16.31.2 	00D0:D311:C788 	000C:85CC:1DA7 	172.16.31.2 	172.16.31.5 
-2.	Reunir información adicional de la PDU de otros ping. 
+e.	Haz clic en Capture / Forward (la flecha derecha seguida de una barra vertical) para mover la PDU al siguiente dispositivo. Reúna la misma información del paso 1d. Repite este proceso hasta que la PDU llegue al destino. Registra la información que reunió de la PDU en una hoja de cálculo con un formato como el de la tabla que se muestra a continuación:
+
+# Formato de hoja de cálculo de ejemplo 
+
+En dispositivo |	MAC de destino |	MAC de origen |	IPv4 de origen |	IPv4 de destino |
+---------------|----------------|---------------|----------------|-----------------|
+172.16.31.5 	  | 000C:85CC:1DA7 | 00D0:D311:C788|	172.16.31.5 	  | 172.16.31.2 
+Switch1 	|000C:85CC:1DA7 |	00D0:D311:C788 |	No corresponde |	No corresponde 
+Concentrador| 	No corresponde |	No corresponde |	No corresponde |	No corresponde 
+172.16.31.2 |	00D0:D311:C788 |	000C:85CC:1DA7 |	172.16.31.2 |	172.16.31.5 
+
+# 2.	Reunir información adicional de la PDU de otros ping.
+   
 Repite el proceso del paso 1 y reúna información para las siguientes pruebas: 
 -	Ping de 172.16.31.2 a 172.16.31.3 
 
  
 
-
-
-
-En dispositivo 	MAC de destino 	MAC de origen 	IPv4 de origen 	IPv4 de destino 
-172.16.31.2	0060:7036:2849	000C:85CC:1DA7	172.16.31.2 	172.16.31.3 
-Concentrador 	No corresponde 	No corresponde 	No corresponde 	No corresponde 
-172.16.31.3	000C:85CC:1DA7	0060:7036:2849	172.16.31.3 	172.16.31.2
+En dispositivo |	MAC de destino |	MAC de origen |	IPv4 de origen |	IPv4 de destino |
+---------------|----------------|---------------|----------------|-----------------|
+172.16.31.2|	0060:7036:2849|	000C:85CC:1DA7	|172.16.31.2 |	172.16.31.3 
+Concentrador |	No corresponde |	No corresponde |	No corresponde |	No corresponde 
+172.16.31.3|	000C:85CC:1DA7	|0060:7036:2849|	172.16.31.3 |	172.16.31.2
 
 . Ping de 172.16.31.4 a 172.16.31.5 Vuelva al modo Realtime. 
  
-En dispositivo 	MAC de destino 	MAC de origen 	IPv4 de origen 	IPv4 de destino 
-172.16.31.4 	00D0.D311.C788	000C.CF0B. BC80	172.16.31.4 	172.16.31.5
+En dispositivo |	MAC de destino |	MAC de origen |	IPv4 de origen |	IPv4 de destino |
+---------------|----------------|---------------|----------------|-----------------|
+172.16.31.4 |	00D0.D311.C788	|000C.CF0B. BC80	|172.16.31.4 	|172.16.31.5
 Switch1 	000C.CF0B. BC80	00D0.D311.C788	No corresponde 	No corresponde 
 172.16.31.5 	000C.CF0B. BC80	00D0.D311.C788	172.16.31.5 	172.16.31.4
 
