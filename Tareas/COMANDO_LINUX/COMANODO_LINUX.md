@@ -41,11 +41,25 @@ En este comado mostramos el exito o el fracaso al momento de ejecutar desde un r
 en primer momento el valor nos da 0 y luego nos da el valor de dos. si ponemos verdadero nos da el valor de 0 y si es falso el valor de 1.
 
 ![Paso 12](https://github.com/Michael-Gavino/Datos_y_Redes/blob/main/main/FOTOS/Imagen%2012.jpg?raw=true)
+Cuando ingresamo el comando `echo $?` nos sale el valor 0 y con el comando `ls -d /bin/usr` podemos ver el rango total en este caso 127.
 
 ![Paso 13](https://github.com/Michael-Gavino/Datos_y_Redes/blob/main/main/FOTOS/Imagen%2013.jpg?raw=true)
 
+con este comando el usuario actual imprimiremos su identificacion en este caso salio 999. Y el superusuario se imprime el valor de 0.
+
 ![Paso 14](https://github.com/Michael-Gavino/Datos_y_Redes/blob/main/main/FOTOS/Imagen%2014.jpg?raw=true)
+
+En este terminal tambien se puede realizar operaciones aritmeticas. Cuando rodeamos una expresión aritmética con doble paréntesis, el shell realizará una expansión aritmética y nno importa los espacios, como observamos en el comando se ejecuta correctamente.
 
 ![Paso 15](https://github.com/Michael-Gavino/Datos_y_Redes/blob/main/main/FOTOS/Imagen%2015.jpg?raw=true)
 
+En los comandos `True ` y `False` nos muestra con los valores de 0 y 1 no hacen nada mas, solo se comprueba la entrada y salida con las salidas anteriores.
+
 ![Paso 16](https://github.com/Michael-Gavino/Datos_y_Redes/blob/main/main/FOTOS/Imagen%2016.jpg?raw=true)
+
+Nuevamente podemos usar los comandos de `True` y `False` para verificar nuestro trabajo. Una vez verificado ya podemos salir con el comando `cd..` o `exit`, si en caso falla podemos usar el siguiente comando ` cd"$some_directory" && rm ./*`
+
+
+Podemos mejorar mucho nuestro trabajo evitando los errores y que el script sea mas complejo y limpio, teniendo en cuanta las variables que nos ayudan a identificar donde se encuentra el error y poder mejorar nuestro script.
+
+
