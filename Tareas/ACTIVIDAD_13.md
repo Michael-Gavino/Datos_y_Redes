@@ -30,9 +30,9 @@ Vamos a definir un protocolo simple que incluya operaciones básicas como PUT, G
 Cada mensaje tendrá una cabecera que incluye el tipo de operación, el tamaño del mensaje, y un número de secuencia para el control de flujo y la recuperación de errores.
 
 | Tipo de operación | Tamaño del mensaje | Secuencia de pseudocódigo | Evaluación NAT |
-|-------------------|--------------------|-----------------------------------|----------------|
-|PUT | GET |  DELETE | DATOS |
-|Enviar un archivo | Recuperar un archivo | Eliminar un archivo del sistema |  Verificar la conexion entre el cliente y el servidor  |
+|-------------------|--------------------|---------------------------|----------------|
+|        PUT        |     GET            |      DELETE               |        DATOS   |
+|Enviar un archivo  | Recuperar un archivo | Eliminar un archivo del sistema |  Verificar la conexion entre el cliente y el servidor  |
 
 
 
