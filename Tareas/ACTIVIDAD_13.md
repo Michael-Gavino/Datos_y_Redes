@@ -1,4 +1,4 @@
-# Problema 2: Implementación de un protocolo de red personalizado sobre TCP
+    # Problema 2: Implementación de un protocolo de red personalizado sobre TCP
 
 ## Contexto
 
@@ -82,4 +82,85 @@ def main():
 
 if __name__ == '__main__':
     main()
+```
+
+CODIGO MEJORADO
+
+
+```python
+import socket
+import struct
+
+# Definición de constantes para tipos de mensaje
+MSG_PUT = 1
+MSG_GET = 2
+MSG_DELETE = 3
+
+# Definición de constantes para estados del control de flujo
+STATE_WAITING_ACK = 0
+STATE_WAITING_DATA = 1
+
+def send_message(sock, msg_type, seq_num, data):
+    # Empaqueta el mensaje con la cabecera y lo envía
+    header = struct.pack('!I I', msg_type, seq_num)
+    message = header + data.encode()
+    sock.sendall(message)
+
+def receive_message(sock):
+    # Recibe un mensaje y lo desempaqueta
+    header = sock.recv(8)
+    msg_type, seq_num = struct.unpack('!I I', header)
+    data = sock.recv(1024)  # ajustar según el tamaño esperado del mensaje
+    return msg_type, seq_num, data.decode()
+
+def main():
+    host = 'localhost'
+    port = 12345
+
+    # Configuración del servidor TCP
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind((host, port))
+    server.listen(1)
+    print("Server listening on port", port)
+
+    # Acepta la conexión entrante
+    client_sock, addr = server.accept()
+    print("Connected by", addr)
+
+    # Inicialización del control de flujo
+    state = STATE_WAITING_DATA
+    expected_seq_num = 0
+
+    # Bucle principal para la comunicación
+    while True:
+        if state == STATE_WAITING_DATA:
+            # Espera recibir un mensaje GET
+            msg_type, seq_num, data = receive_message(client_sock)
+            if msg_type == MSG_GET and seq_num == expected_seq_num:
+                print("Received GET:", seq_num, data)
+                # Simulación de procesamiento de la solicitud GET
+                response_data = f"File content for {data}"
+                send_message(client_sock, MSG_GET, seq_num + 1, response_data)
+                expected_seq_num += 1
+            else:
+                print("Error: Unexpected message or sequence number")
+
+        elif state == STATE_WAITING_ACK:
+            # Espera recibir un mensaje ACK
+            msg_type, seq_num, data = receive_message(client_sock)
+            if msg_type == MSG_ACK and seq_num == expected_seq_num: # type: ignore
+                print("Received ACK:", seq_num)
+                state = STATE_WAITING_DATA
+            else:
+                print("Error: Unexpected message or sequence number")
+
+    # Cierra la conexión
+    client_sock.close()
+    server.close()
+
+if __name__ == '__main__':
+    main()
+
+```
+
 
