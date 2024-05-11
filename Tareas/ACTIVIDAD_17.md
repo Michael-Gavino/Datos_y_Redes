@@ -6,27 +6,4 @@ Crea una función que simule un cache de red simple. Esta función deberá almac
 
 Implementa un mecanismo de cache utilizando diccionarios.
 Demostrar la mejora en eficiencia al evitar operaciones repetidas.
-```python
-cache_de_red = {}
 
-def obtener_datos_desde_cache(identificador):
-    """Obtiene datos del caché si están disponibles."""
-    if identificador in cache_de_red:
-        print(f"Datos obtenidos desde el caché para: {identificador}")
-        return cache_de_red[identificador]
-    else:
-        print(f"No se encontraron datos en el caché para: {identificador}")
-        return None
-
-def almacenar_cache(identificador, datos):
-  """almacenar datos"""
-  datos = {}
-  return datos
-  cache_de_red[identificador] = datos
-  print(f'Datos almacenados : {identificador}')
-
-def identicar_datos(identificador):
-  print(f'obtener_datos_desde_caché')
-  return cache_de_red[identificador]
-
-```
