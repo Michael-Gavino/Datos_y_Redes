@@ -52,3 +52,23 @@
 
 El Servicio de Migración de Bases de Datos de AWS (DMS) simplifica el proceso de migración de datos proporcionando una solución robusta y segura para trasladar datos entre diferentes fuentes y destinos. Es ideal para organizaciones que buscan migrar sus cargas de trabajo a la nube de AWS con mínima interrupción y sin pérdida de datos, ofreciendo soporte tanto para migraciones únicas como para entornos de replicación continua.
 
+#### CODIGO
+```python
+class Ledger:
+    def __init__(self):
+        self.transactions = []
+    
+    def record_transaction(self, transaction):
+        self.transactions.append(transaction)
+
+    def get_transactions(self):
+        return self.transactions
+
+ledger = Ledger()
+
+ledger.record_transaction({'id': 1, 'action': 'create', 'data': 'Alice'})
+ledger.record_transaction({'id': 2, 'action': 'update', 'data': 'Alice Updated'})
+
+print(ledger.get_transactions())
+```
+
