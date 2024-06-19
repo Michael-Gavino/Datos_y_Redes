@@ -22,6 +22,8 @@
 
 ## Servicio de Migración de Bases de Datos de AWS (DMS)
 
+AWS Database Migration Service (AWS DMS) es un servicio administrado de migración y replicación que permite trasladar sus cargas de trabajo de análisis y bases de datos a AWS de forma rápida, segura y con un tiempo de inactividad mínimo y sin pérdida de datos. Es una herramienta que facilita la migración de datos de una base de datos a otra, ya sea dentro de la nube de AWS o entre una fuente local y AWS. 
+
 ### Proceso General de Migración con AWS DMS
 
 1. **Preparación y Planificación**
