@@ -17,7 +17,7 @@ Este proyecto simula la creación, despliegue y gestión de una API REST utiliza
 - `github`: Documentacion del proyecto.
 - `docs/`: Documentación teórica y práctica.
 - `src/`: Código fuente de la simulación.
-- `setup.py`: Codigos  de Python.
+- `secript.py`: Codigos  de Python.
 
 ## Uso
 
