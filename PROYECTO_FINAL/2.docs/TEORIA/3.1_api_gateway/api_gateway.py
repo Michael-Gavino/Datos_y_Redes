@@ -13,8 +13,8 @@ class APIGateway:
         else:
             return "Recurso no encontrado."
 
-    def simulacion(self): #simulacion de la configuracion
-        print("Simulacion de API Gateway")
+    def simulacion(self): # configuracion de la api
+        print("recursos api Gateway")
         print(self.recursos)
 
 #la creación de recursos y métodos
