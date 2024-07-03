@@ -1,3 +1,9 @@
+## Departamento Académico de Ingeniería C8280 - Comunicación de Datos y Redes
+
+# Proyecto: Desarrollo e implementación de una API REST con Amazon API Gateway
+
+Este proyecto tiene como objetivo que los estudiantes desarrollen e implementen una API REST utilizando Amazon API Gateway, integrando diversos servicios de AWS y controlando el acceso a la API. Los estudiantes deberán usar AWS Lab Learner y Python para realizar todas las tareas requeridas.
+
 ## Introducción
 
 El proyecto consiste en crear una API REST para un sistema de gestión de inventarios. Los estudiantes deberán implementar endpoints para realizar operaciones CRUD (Create, Read, Update, Delete) sobre los productos en el inventario, almacenar los datos en DynamoDB, y controlar el acceso a la API utilizando Amazon API Gateway.
