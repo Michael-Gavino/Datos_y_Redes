@@ -302,7 +302,7 @@ Configurar el monitoreo de la API para rastrear el uso y detectar posibles probl
 Esta configuración permite monitorear efectivamente el desempeño de la API, visualizar las métricas clave en dashboards y recibir notificaciones proactivas sobre posibles problemas, asegurando una respuesta rápida y efectiva a cualquier incidente.
 
 
-EJERCICIO 7
+ # EJERCICIO 7
 
 ### Optimización del Rendimiento de Amazon API Gateway
 
@@ -322,13 +322,7 @@ Optimizar el rendimiento de Amazon API Gateway para manejar grandes volúmenes d
 
 2. **Implementar caching en API Gateway para mejorar la latencia de las respuestas**:
    - **Descripción**: Implementar caching en API Gateway puede mejorar significativamente la latencia de las respuestas al almacenar en caché las respuestas de los endpoints.
-   - **Pasos para implementar caching**:
-     1. Navega a la consola de Amazon API Gateway.
-     2. Selecciona tu API y navega a la sección de **Stages**.
-     3. Haz clic en el nombre del **Stage**.
-     4. Configura el **Cache Settings** para habilitar y configurar el caching.
-     5. Define el TTL (Time-to-Live) y el tamaño de la caché según tus necesidades.
-     6. Guarda los cambios para aplicar la configuración de caching.
+
 
 3. **Ajustar la configuración de la API para manejar grandes volúmenes de tráfico de manera eficiente**:
    - **Descripción**: Ajustar la configuración de API Gateway es crucial para manejar grandes volúmenes de tráfico de manera eficiente y escalable.
