@@ -27,14 +27,3 @@ Dentro del contexto de seguridad en AWS, se pueden abordar varios aspectos impor
    - **Funcionalidades clave:** Registro de eventos de API y actividades de usuario; detección y alertas de comportamientos anómalos; seguimiento de cambios en la infraestructura.
 
 Estos componentes y prácticas forman parte esencial de la estrategia de seguridad en AWS, permitiendo a los usuarios proteger sus datos, aplicaciones y entornos de manera efectiva en la nube.
-
-## Departamento Académico de Ingeniería C8280 - Comunicación de Datos y Redes
-
-# Proyecto: Desarrollo e implementación de una API REST con Amazon API Gateway
-
-Este proyecto tiene como objetivo que los estudiantes desarrollen e implementen una API REST utilizando Amazon API Gateway, integrando diversos servicios de AWS y controlando el acceso a la API. Los estudiantes deberán usar AWS Lab Learner y Python para realizar todas las tareas requeridas.
-
-
-
-
-
