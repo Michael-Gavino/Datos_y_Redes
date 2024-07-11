@@ -1,5 +1,6 @@
+# datos en formato json
 import json
-
+#creacionde la clase API
 class API:
     def __init__(self):
         self.nombre_api = 'ProductosAPI'
@@ -12,12 +13,12 @@ class API:
     # Ejercicio 1 y 2: Crear la API REST
     def crear_api_rest(self):
         print(f"Creando la API: {self.nombre_api}")
-        return {'id': 'id-de-api-simulada'}
+        return {'id': 'id-de-api'}
 
-    def crear_recurso(self, id_padre, p_ruta):
-        id_recurso = f'id-recurso-simulado-{p_ruta}'
+    def crear_recurso(self, id_p, p_ruta):
+        id_recurso = f'id-recurso-{p_ruta}'
         self.recursos[p_ruta] = {
-            'id_padre': id_padre,
+            'id_padre': id_p,
             'id_recurso': id_recurso,
             'ruta': f'/{p_ruta}'
         }
@@ -33,12 +34,12 @@ class API:
 
     # Ejercicio 4: Despliegue de la API
     def crear_despliegue(self, nombre_etapa):
-        self.etapas[nombre_etapa] = 'id-de-despliegue-simulado'
+        self.etapas[nombre_etapa] = 'id-de-despliegue'
         print(f"Despliegue creado en la etapa: {nombre_etapa}")
 
     # Ejercicio 5: Control de acceso a la API REST
     def crear_clave_api(self, nombre_clave):
-        self.claves_api[nombre_clave] = 'clave-api-simulada'
+        self.claves_api[nombre_clave] = 'clave-api'
         print(f"Clave API '{nombre_clave}' creada con valor '{self.claves_api[nombre_clave]}'")
         return {'apiKey': self.claves_api[nombre_clave]}
     # crear la politica iam
@@ -81,7 +82,7 @@ def simular_control_acceso(api_simulada):
     print("\nConfiguración final de control de acceso:")
     print(json.dumps(configuracion_control_acceso, indent=4))
 
-# Simulación del proceso completo de creación y despliegue de la API
+# Simulación del proceso de creación y despliegue de la API
 if __name__ == '__main__':
     simulacion_api = API()
     
