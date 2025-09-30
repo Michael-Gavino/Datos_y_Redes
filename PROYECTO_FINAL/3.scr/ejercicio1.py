@@ -1,4 +1,4 @@
-# Simulación de funciones Lambda
+# Simulación de funciones Lamda
 def lambda_create_product(event, context):
     return {
         'id': event['id'],
