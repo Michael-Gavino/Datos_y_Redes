@@ -1,74 +1,125 @@
 class SNS:
     def __init__(self):
+        # Diccionario que almacenará los "topics" (temas) creados y sus suscriptores.
+        # La estructura será: {"nombre_del_topic": [lista_de_endpoints_suscritos]}
         self.topics = {}
-        # Diccionario para almacenar los topics y sus suscripciones
 
     def create_topic(self, name):
+        """
+        Crea un nuevo tema (topic) en el sistema SNS.
+
+        :param name: Nombre del topic a crear.
+        :return: El nombre del topic creado.
+        :raises Exception: Si el topic ya existe.
+        """
         if name in self.topics:
-            raise Exception(f"Topic {name} already exists")
-        # Verifica si el topic ya existe
+            raise Exception(f"Topic {name} already exists")  # Evita duplicados
+        
+        # Si no existe, crea el topic con una lista vacía de suscriptores
         self.topics[name] = []
-        # Crea un nuevo topic con una lista vacía de suscripciones
         return name
 
     def subscribe(self, topic, endpoint):
+        """
+        Suscribe un endpoint (destino) a un topic específico.
+
+        :param topic: Nombre del topic al que se desea suscribir.
+        :param endpoint: Objeto Endpoint que se quiere suscribir.
+        :raises Exception: Si el topic no existe o si el endpoint ya está suscrito.
+        """
         if topic not in self.topics:
-            raise Exception(f"Topic {topic} does not exist")
-        # Verifica si el topic existe
+            raise Exception(f"Topic {topic} does not exist")  # Validar existencia del topic
+        
         if endpoint in self.topics[topic]:
             raise Exception(f"Endpoint {endpoint.name} is already subscribed to {topic}")
-        # Verifica si el endpoint ya está suscrito al topic
+        # Evita suscripciones duplicadas
+
+        # Añade el endpoint a la lista de suscriptores del topic
         self.topics[topic].append(endpoint)
-        # Añade el endpoint a la lista de suscripciones del topic
 
     def publish(self, topic, message):
+        """
+        Publica un mensaje a todos los endpoints suscritos a un topic.
+
+        :param topic: Nombre del topic en el que se publicará el mensaje.
+        :param message: Mensaje a enviar a todos los suscriptores.
+        :raises Exception: Si el topic no existe o si no tiene suscriptores.
+        """
         if topic not in self.topics:
             raise Exception(f"Topic {topic} does not exist")
-        # Verifica si el topic existe
+        
         if not self.topics[topic]:
             raise Exception(f"No endpoints subscribed to {topic}")
-        # Verifica si hay endpoints suscritos al topic
+        
+        # Envia el mensaje a cada endpoint suscrito al topic
         for endpoint in self.topics[topic]:
             endpoint.notify(message)
-        # Envía el mensaje a todos los endpoints suscritos
 
     def list_topics(self):
+        """
+        Devuelve una lista con todos los nombres de los topics creados.
+
+        :return: Lista de nombres de topics.
+        """
         return list(self.topics.keys())
-        # Devuelve una lista de todos los nombres de topics
 
     def list_subscriptions(self, topic):
+        """
+        Devuelve la lista de nombres de todos los endpoints suscritos a un topic.
+
+        :param topic: Nombre del topic.
+        :return: Lista de nombres de endpoints suscritos.
+        :raises Exception: Si el topic no existe.
+        """
         if topic not in self.topics:
             raise Exception(f"Topic {topic} does not exist")
-        # Verifica si el topic existe
+        
+        # Retorna los nombres de los endpoints suscritos
         return [endpoint.name for endpoint in self.topics[topic]]
-        # Devuelve una lista de los nombres de endpoints suscritos al topic
+
 
 class Endpoint:
     def __init__(self, name):
+        """
+        Representa un destino (endpoint) que puede recibir notificaciones.
+
+        :param name: Nombre o identificador del endpoint (correo, número, etc.)
+        """
         self.name = name
-        # Inicializa el endpoint con nombre
 
     def notify(self, message):
+        """
+        Recibe e imprime un mensaje de notificación enviado desde un topic.
+
+        :param message: Mensaje enviado desde el sistema SNS.
+        """
         print(f"Notification to {self.name}: {message}")
-        # Imprime un mensaje de notificación para el endpoint
 
-sns = SNS()  # Crear una instancia del sistema SNS
 
-# Crear endpoints
+# ===========================
+# EJEMPLO DE USO DEL SISTEMA
+# ===========================
+
+# Crear una instancia del sistema SNS
+sns = SNS()
+
+# Crear endpoints que recibirán notificaciones
 email = Endpoint("user@example.com")
 sms = Endpoint("+51987654321")
 
-# Crear un topic
-topic = sns.create_topic("MyTopic")  # Crear un nuevo topic llamado "MyTopic"
+# Crear un nuevo topic llamado "MyTopic"
+topic = sns.create_topic("MyTopic")
 
-# Suscribir endpoints al topic
-sns.subscribe("MyTopic", email)  # Suscribir el endpoint email al topic "MyTopic"
-sns.subscribe("MyTopic", sms)    # Suscribir el endpoint sms al topic "MyTopic"
+# Suscribir los endpoints creados al topic
+sns.subscribe("MyTopic", email)
+sns.subscribe("MyTopic", sms)
 
-# Publicar un mensaje en el topic
-sns.publish("MyTopic", "Welcome to MyTopic!")  # Publicar un mensaje en el topic "MyTopic"
+# Publicar un mensaje en el topic (se enviará a todos los suscriptores)
+sns.publish("MyTopic", "Welcome to MyTopic!")
 
-# Listar topics y suscripciones
-print("Topics:", sns.list_topics())  # Listar todos los topics creados
-print("Subscriptions to MyTopic:", sns.list_subscriptions("MyTopic"))  # Listar las suscripciones del topic "MyTopic"
+# Listar todos los topics existentes
+print("Topics:", sns.list_topics())
+
+# Listar los endpoints suscritos a un topic específico
+print("Subscriptions to MyTopic:", sns.list_subscriptions("MyTopic"))
 
